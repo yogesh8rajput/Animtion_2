@@ -11,9 +11,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-image: url(ssppace.jpg);
-            background-repeat: no-repeat;
-                background-size: cover;
+            /* Replace the background image with a blue milky way galaxy style */
+            background-color: #000033;
+            background-image: 
+                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+                radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+            background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
             overflow: hidden;
         }
         .container{
@@ -36,10 +42,7 @@
         .earth,.moon{
             position:absolute;
             border-style: solid;
-            border-color: white
-            transparent
-             transparent
-              transparent;
+            border-color: #00ffff transparent transparent transparent;
             border-width: 0.1em 0.1em 0 0;
             border-radius: 50%;
         }
@@ -88,15 +91,64 @@
 
             }
         }
+        
+        /* Add Mars planet */
+        .mars {
+            position: absolute;
+            top: 5em;
+            width: 30em;
+            height: 30em;
+            border-style: solid;
+            border-color: rgba(255, 0, 0, 0.3) transparent transparent transparent;
+            border-width: 0.1em 0.1em 0 0;
+            border-radius: 50%;
+            animation: orbit 30s linear infinite;
+        }
+        
+        .mars::before {
+            content: '';
+            position: absolute;
+            top: 2.5em;
+            right: 2.5em;
+            width: 2em;
+            height: 2em;
+            background-color: #ff5733;
+            border-radius: 50%;
+        }
+        
+        /* Add Venus planet */
+        .venus {
+            position: absolute;
+            top: 8em;
+            width: 25em;
+            height: 25em;
+            border-style: solid;
+            border-color: rgba(255, 255, 0, 0.3) transparent transparent transparent;
+            border-width: 0.1em 0.1em 0 0;
+            border-radius: 50%;
+            animation: orbit 15s linear infinite;
+        }
+        
+        .venus::before {
+            content: '';
+            position: absolute;
+            top: 2em;
+            right: 2em;
+            width: 1.8em;
+            height: 1.8em;
+            background-color: #e6e600;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="sun"></div>
+        <div class="venus"></div>
         <div class="earth">
             <div class="moon"></div>
         </div>
+        <div class="mars"></div>
     </div>
-
 </body>
 </html>
